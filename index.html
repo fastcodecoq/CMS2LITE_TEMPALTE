@@ -1,0 +1,98 @@
+ <div id="cont">
+ <div id="container" >
+
+    %print_header%
+
+   	 <section id="info-wraper">
+
+   	 	
+         %print_content%
+      
+
+   	 </section>
+
+   	 <footer class="full clearfix" style="text-align:center">
+     %print_foot%    
+   	 </footer>
+     
+
+      </div>
+
+   	</div>
+
+   	<script type="text/javascript" src="%theme_path%/js/carousel.js"></script>   	
+   	<script type="text/javascript" src="js/phpjs.js"></script>   	 	   	 
+   	<script type="text/javascript" src="js/forms.js"></script>   	 	   	 
+   	<script type="text/javascript" src="js/datepicker/js/bootstrap-datepicker.js"></script>   	 	   	 
+   	<script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=false&amp;language=es"></script>    
+    <script type="text/javascript" src="%theme_path%/js/dialogs.js"></script>
+    <script type="text/javascript" src="%theme_path%/js/quo.js"></script>
+
+    <script type="text/javascript" src="%theme_path%/js/index.js"></script>            
+
+  
+
+   	<script type="text/javascript">
+   		  
+   		 
+   
+
+       function scroll_controller(e){
+           
+
+           $(".slider").animate({height:450}, "fast");
+
+           if($(window).scrollTop() >= window.begreen)
+             $("#Begreen").addClass("begreen");
+
+           if($(window).scrollTop() >= window.htop)
+             $("header").addClass("toped");
+           else
+             $("header").removeClass("toped");
+
+
+
+       }
+
+       function ini(){
+               ini_controllers();
+     
+          $(window).on("scroll", scroll_controller);
+          window.htop = $("#container").offset().top + 200;          
+          
+          if($("#begreeen").length > 0)
+          window.begreen = $("#begreeen").offset().top;          
+   
+       }
+   		  
+   		  $(ini);   
+
+
+                  //cycle loader bar
+
+    var progress = $('#progress'),
+    slideshow = $( '.cycle-slideshow' );
+
+slideshow.on( 'cycle-initialized cycle-before', function( e, opts ) {
+    progress.stop(true).css( 'width', 0 );
+});
+
+slideshow.on( 'cycle-initialized cycle-after', function( e, opts ) {
+    if ( ! slideshow.is('.cycle-paused') )
+        progress.animate({ width: '100%' }, opts.timeout, 'linear' );
+});
+
+slideshow.on( 'cycle-paused', function( e, opts ) {
+   progress.stop(); 
+});
+
+slideshow.on( 'cycle-resumed', function( e, opts, timeoutRemaining ) {
+    progress.animate({ width: '100%' }, timeoutRemaining, 'linear' );
+});
+
+  window.$_PATH = "{{theme_path}}";	
+
+
+
+
+   	</script>

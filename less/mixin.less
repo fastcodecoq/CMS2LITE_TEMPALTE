@@ -1,0 +1,339 @@
+
+//================================ CLASES NORMALES
+
+.marginAuto{
+	 margin:0 auto;
+}
+
+.fixed{
+	  position:fixed;
+}
+
+.hide{
+
+   display:none;
+	
+}
+
+.wrap{
+
+	&:after{
+		content: "";
+clear: both;
+display: block
+	}
+
+}
+
+.rel{
+
+	 position: relative;
+
+}
+
+.abs{
+
+	 position: absolute;
+
+}
+
+.fx{
+
+	 position: fixed;
+
+}
+
+.sombraBaja {
+
+position: relative;
+z-index: 10000;
+
+ &:before {
+content: "";
+position: absolute;
+width: 88%;
+left: 6%;
+height: 15px;
+background: transparent;
+bottom: 5px;
+box-shadow: 0 2.5px 15px rgba(0, 0, 0, 0.73);
+z-index: -1;
+border-radius: 30%;
+ }
+
+}
+
+
+.coli(@var){
+	  color:@var !important;
+}
+
+ .w(@val){
+
+ 	width:@val;
+
+ }
+
+ .h(@val){
+
+ 	height:@val;
+
+ }
+
+  .wi(@val){
+
+ 	width:@val !important;
+
+ }
+
+ .hi(@val){
+
+ 	height:@val !important;
+
+ }
+
+  .animar(@val){
+
+  		transition: @val;
+   	    -webkit-transition: @val;
+   	    -moz-transition: @val;
+   	    -o-transition: @val;
+
+  }
+
+  .rotar{
+  	
+   .animar(all 2s);
+
+ transform: rotate(360deg);
+ -ms-transform: rotate(360deg);
+ -moz-transform: rotate(360deg);
+ -webkit-transform: rotate(360deg);
+ -o-transform: rotate(360deg);      
+
+  }
+
+  .rotate(@anim,@fx){
+
+  	  .animar(@anim);
+
+  	  transform: @fx;
+ 	-ms-transform: @fx;
+ 	-moz-transform: @fx;
+ 	-webkit-transform: @fx;
+ 	-o-transform: @fx; 
+
+  }
+
+
+  .rotarPath{
+  	
+   .animar(all 0.5s);
+
+}
+
+
+
+ .lft{
+      float: left;
+      display: block;
+    }
+
+    .rgt{
+       float: right;
+       display: block;
+    }
+
+    .tlf{
+       text-align: left;
+    }
+
+    .trg{
+       text-align: right;
+    }
+
+    .tlc{
+        text-align:center;
+    }
+
+    .tlj{
+      text-align:justify;
+    }
+
+    .tlg(@val){
+        text-align:@val;
+    }
+
+     .mayusculas{
+ text-transform:uppercase;
+ }
+
+.overAuto{
+	 overflow:auto ;
+}
+
+.overHidden{
+	  overflow-x:hidden;
+	  overflow-y:hidden;
+}
+
+.formulario-pila{
+
+   *{
+      display:block !important;
+      outline:none;
+   }
+	    
+}
+
+
+//================================ MIXINS
+
+.boxs(@val){
+	
+	 -webkit-box-shadow: @val;
+	 -moz-box-shadow: @val;
+
+}
+
+.opac(@val){
+	
+	  opacity:@val;
+	  @val1: @val*100;
+	  filter: alpha(opacity=@val1);
+
+}
+
+.dim(@w,@h){
+	
+	width:@w;
+	height:@h;
+}
+
+.dimi(@w,@h){
+	
+	width:@w !important;
+	height:@h !important;
+}
+
+.back(@val){
+	
+	background: @val;
+}
+
+
+.backi(@val){
+	
+	background: @val !important;
+}
+
+
+.col(@val){
+	
+	  color: @val;
+}
+
+
+
+.scoor(@coor){
+	  background-position: @coor !important;
+}
+
+.bold(@val){
+	  font-weight:@val;
+}
+
+.ff(@val){
+	   font-family:@val;
+}
+
+.bgc(@val){
+	  background-color:@val;
+}
+
+.lh(@val){
+	  line-height:@val;
+}
+
+.fsiz(@val){
+	 font-size:@val;
+}
+
+.tsha(@val){
+	  text-shadow:@val;
+}
+
+.grad(@de,@hasta,@per,@_per){
+	    background-image: -webkit-linear-gradient(top, @de @per,@hasta @_per);
+		background-image: -moz-linear-gradient(top, @de @per,@hasta @_per);
+		background-image: -khtml-gradient(linear,left top,left bottom,from( @de ),to @hasta)  !important;
+		background-image: -o-linear-gradient( @de,@hasta) !important ;
+		filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=@de, endColorstr=@hasta);	
+}
+
+.curva(@val){
+
+	    border-radius: @val;
+
+}
+
+.pad(@val){
+	   padding:@val;
+}
+
+.padi(@val){
+	   padding:@val !important;
+}
+
+.disp(@val){
+	   display:@val;
+}
+
+.posi(@val){
+	   position:@val;
+}
+
+.bord(@val){
+	   border:@val;
+}
+
+.cent-abs(@w,@h){
+	    top:50%;
+	    left:50%;
+	    margin-left: @w;
+	    margin-top: @h;
+}
+
+.cent-fix(@w,@h){
+	    top:50%;
+	    left:50%;
+	    margin-left: @w;
+	    margin-top: @h;
+	    z-index: 100000;
+}
+
+
+.zin(@z){
+	  z-index:@z;
+ }
+
+ .clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
+}
